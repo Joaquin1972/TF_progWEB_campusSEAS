@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Math</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Objeto math</h3>
+    <p>Pulsa en el botón para mostrar propiedades y metodos del objeto string. La cadena que se trabajara es "Real Zaragoza volveremos a primera":
+    </p>
+    <input type="button" id="mostrar" onclick="objetostring()" value="Mostrar funciones del objeto string" class="boton">
+    
+
+    <div id="texto">
+
+
+    </div>
+
+
+    <img src="img/cadena2.PNG" alt="cadena">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        
+        function objetostring () {
+            var miString = "Real Zaragoza volveremos a primera"
+            document.getElementById("texto").innerHTML = "";
+            mostrarString("El caracter en la posicion 5 es " + miString.charAt(5))
+            mostrarString("La longitud es: " + miString.length)
+            mostrarString("La posición de 'goza' es: " + miString.indexOf("goza"))
+            mostrarString("La posición de 'bolbe' es: " + miString.indexOf("bolbe"))
+            mostrarString("-1 indica que no está esa cadena en el texto")
+            mostrarString("Substraigo 5 posiciones desde la posición 6: " + miString.substr(5,4))
+            mostrarString("Substraigo desde la posicion 10 a la 15: " + miString.slice(10,15))
+            mostrarString("Reemplazo 'volveremos a' por 'somos de': " + miString.replace("volveremos a","somos de"))
+        }
+        function mostrarString(e) {
+            document.getElementById("texto").innerHTML += e + "<br>";
+        } 
+        
+
+    </script>
+
+    
+
+
+
+</body>
+
+</html>

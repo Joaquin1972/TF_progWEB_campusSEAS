@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <title>Número teléfono correcto</title>
+  <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+  <header>
+    <h1>JAVASCRIPT AVANZADO U3</h1>
+  </header>
+  <nav>
+    <a href="index.html">Volver a unidad 3</a>
+  </nav>
+  <main>
+    <h3>Número de teléfono correcto</h3>
+    <p>Introduce un número de teléfono correcto</p>
+    <form action="" id="formulario" onsubmit="return validacion()">
+      INTRODUCE TELEFONO
+      <input type="text" id="campo" />
+      <input type="submit" value="Enviar" />
+    </form>
+    <div id="texto">
+
+
+    </div>
+   <img src="img/telef2.PNG" alt="telefono">
+  </main>
+  <footer>
+    <p>Todos los derechos reservados</p>
+    <p>JSS - 2024</p>
+  </footer>
+  <script type="text/javascript">
+      function validacion() {
+        valor = document.getElementById("campo").value;
+        if (isNaN(valor)) {
+          alert("Contiene letras");
+          return false;
+        }
+        var primerNumero = valor.charAt(0);
+        if (primerNumero > 5) {
+          if (valor.length == 9) {
+            alert ("Telefono es correcto")
+          } else {
+            alert ("Longitud incorrecta")
+            return false;
+          }
+          } else {
+            alert ("El teléfono empieza por un número incorrecto")
+            return false;
+          }
+        }
+  </script>
+
+
+
+
+</body>
+
+</html>

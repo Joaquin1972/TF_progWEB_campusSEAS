@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>FOR</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Estructura de control de flujo FOR</h3>
+    <p>Pulsa y el texto que escribas, te lo devuelvo al revés</p>
+    <input type="button" value="Pulsa" onclick="cambiaOrden()" class="boton">
+    <div id="texto"></div>
+    <img src="img/for.PNG" alt="for">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function cambiaOrden () {
+        var texto = "";
+        var textoAlReves = "";
+        var longitud = 0;
+        texto = prompt("Introduce la cadena de texto:", "");
+        longitud = texto.length;
+        for (i = longitud-1; i>=0 ; i = i - 1) {
+          textoAlReves = textoAlReves + texto.charAt(i);
+        } 
+        document.getElementById("texto").innerHTML = textoAlReves;}
+    </script>
+
+
+
+</body>
+
+</html>

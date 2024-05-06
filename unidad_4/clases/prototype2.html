@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>JSON</title>
+  <script>
+    function Persona(nombre, edad) {
+      this.nombre = nombre;
+      this.edad = edad;
+    }
+    // Crear dos instancias de Persona 
+    var persona1 = new Persona("Juan", 40);
+    var persona2 = new Persona("Luis", 30);
+    //añado a Persona una funcion con prototype
+    Persona.prototype.Saludar = function () {
+      alert("Hola, me llamo " + this.nombre + " y tengo " + this.edad + " años")
+    }
+    persona1.Saludar();
+    persona2.Saludar();
+    // añado a Persona otra propiedad
+    Persona.prototype.ciudad = "Burgos"
+    alert(persona1.nombre + " vive en " + persona1.ciudad)
+    Persona.prototype.ciudad = "Oviedo"
+    alert(persona2.nombre + " vive en " + persona2.ciudad)
+  </script>
+
+
+
+
+
+
+  <link rel='stylesheet' href='../css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+  <header>
+    <h1>LENGUAJE JAVASCRIPT U5</h1>
+  </header>
+
+  <nav>
+    <a href="../index.html">Volver a U5</a>
+  </nav>
+  <div class="principal">
+
+    <h2>PROTOTYPE</h2>
+    <p>Ejemplo más sencillo de uso de <b>prototype</b>. Se crean dos objetos de tipo persona y luego, mediante prototype le añado una función y otra propiedad más.</p>
+
+    <img src="../json/img/prottype.PNG" alt="prototype">
+
+  </div>
+
+</body>
+
+</html>

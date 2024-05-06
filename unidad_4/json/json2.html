@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>JSON</title>
+  <script>
+    window.onload = function () {
+
+      const jugador = '{"nombre":"Juan", "edad":30, "puesto":"delantero"}'
+      const obj = JSON.parse(jugador);
+      document.getElementById("demo").innerHTML = obj.nombre + " juega de " + obj.puesto + " y tiene " + obj.edad + " años.";
+
+      const colores = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+      const myArr = JSON.parse(colores);
+      for (var i = 0; i < myArr.length; i++) {
+        document.getElementById("demo2").innerHTML += myArr[i] + "<br>";
+      }
+
+      const text = '{"nombre":"Pepe", "fecha":"2010-1-1", "ciudad":"Burgos"}';
+      const obj2 = JSON.parse(text, function (key, value) {
+        if (key == "fecha") {
+          fecha2 = new Date(value);
+          anyo = fecha2.getFullYear();
+          mes = (fecha2.getMonth())+1;
+          dia = fecha2.getDate();
+          fecha2 = dia.toString() + "-" + mes.toString() + "-" + anyo.toString()
+          return fecha2
+        } else {
+          return value;
+        }
+      });
+      document.getElementById("demo3").innerHTML = obj2.nombre + ", nacio el " + obj2.fecha + " y es de " + obj2.ciudad;
+    }       
+  </script>
+
+
+
+
+  <link rel='stylesheet' href='css/styles.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+  <header>
+    <h1>JSON U5</h1>
+  </header>
+
+  <nav>
+    <a href="../index.html">Volver a U5</a>
+  </nav>
+  <div class="principal">
+
+    <h2>JSON.PARSE()</h2>
+    <P>Un uso habitual de JSON es el intercambio de datos desde/hacia un servidor</P>
+    <p>Cuando recibimos datos desde un servidor es siempre tipo cadena</p>
+    <p><b>JSON.parse()</b> es un <b>método en JavaScript</b> que se utiliza para analizar (parsear) una <b>cadena JSON y
+        convertirla en un objeto JavaScript</b></p>
+    <p>Ejemplo:</p>
+    <img src="img/parse1.PNG" alt="parse_obj">
+    <p id="demo"></p>
+    <p>Cuando los datos de JSON son una matriz, el metodo JSON.parse() devuelve una matriz de JavaScript y la podemos
+      trabajar como tal</p>
+    <p>Ejemplo:</p>
+    <img src="img/parse2.PNG" alt="parse_obj">
+    <p id="demo2"></p>
+    <p>Para las fechas tenemos el inconveniente que JSON no tiene el tipo de dato como tal</p>
+    <p>Debemos introducirlos como cadena y luego convertirlo a tipo fecha con JavaScript</p>
+    <p>Ejemplo:</p>
+    <img src="img/parse3.PNG" alt="parse_obj">
+    <p id="demo3"></p>
+  </div>
+
+</body>
+
+</html>

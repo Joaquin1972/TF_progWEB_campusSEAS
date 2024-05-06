@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Texto y Textarea</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+    <header>
+        <h1>JAVASCRIPT AVANZADO U3</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 3</a>
+    </nav>
+    <main>
+    <h3>Obtener los valores de texto y textarea de un formulario</h3>
+    <p>Escribe textos y pulsa enviar</p>
+    <form action="" id="formulario">
+        <label for="textoo">Input</label><br>
+        <input type="text" id="textoo"><br>
+        <label for="textarea">Textarea</label><br>
+        <textarea name="" id="parrafo" cols="30" rows="10"></textarea><br>
+        <input type="button" value="enviar" onclick="valores()" class="boton">
+    </form>
+    <div id="texto">
+
+
+    </div>
+    <img src="img/textotextarea.PNG" alt="textotextarea">
+    </main>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+         function valores() {
+                var valorTexto = document.getElementById("textoo").value;
+                document.getElementById("texto").innerHTML = "En el input: " + 
+                valorTexto + "<br>";
+                var valorParrafo = document.getElementById("parrafo").value;
+                document.getElementById("texto").innerHTML += "En el textarea: " + 
+                valorParrafo + "<br>";              
+            }
+    </script>
+
+    
+
+
+
+</body>
+
+</html>

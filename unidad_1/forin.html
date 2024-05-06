@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>WHILE</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Estructura de control de flujo For in</h3>
+    <p>Selecciona la matriz que quieres crear, después pulsa en "Crear Matriz" y te pedirá tantos nombres como el tamaño de la matríz y los escribira abajo:</p>
+    <select name="n" id="n">
+        <option value="3" selected>Matriz de 3 elementos</option>
+        <option value="4">Matriz de 4 elementos</option>
+        <option value="5">Matriz de 5 elementos</option>
+        <option value="6">Matriz de 6 elementos</option>
+    </select>
+    <input type="button" name="" id="boton" onclick="creaMatriz()" value="Crea Matriz" class="boton">
+
+
+    <div id="texto"></div>
+    <img src="img/forin.PNG" alt="forin">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function creaMatriz() {
+            document.getElementById("texto").innerHTML = ""
+            //Obtengo el numero de elementos para crear la matriz
+            var elementos = document.getElementById("n").value;
+            var Nombres = new Array(elementos);
+            //Solicito nombre hasta llenar matriz
+            for (i = 0; i < elementos; i++) {
+                Nombres[i] = prompt("introduzca Nombre: ", "");
+            }
+            for (j in Nombres) {
+                document.getElementById("texto").innerHTML += Nombres[j] + " "
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

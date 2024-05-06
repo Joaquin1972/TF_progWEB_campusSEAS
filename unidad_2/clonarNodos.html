@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Clonar Nodos</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>DOM Y EVENTOS EN JAVASCRIPT U2</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 2</a>
+    </nav>
+    <main>
+    <button class="boton" onclick="clonaNodo()">Clonar nodo</button>
+    <button class="boton" onclick="borraNodo()">Borrar nodo</button>
+
+    <div id="nodo" style="border: 1px solid blue;">
+        <ul id="lista">
+            <li>Lista 1</li>
+            <li>Lista 2</li>
+            <li>Lista 3</li>
+        </ul>
+    </div>
+    <div id="texto">
+
+
+    </div>
+    <img src="img/clonar.PNG" alt="clonar">
+    
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+</main>
+    <script type="text/javascript">
+        function clonaNodo() {
+        var div2 = document.getElementById("nodo").cloneNode(true);
+        document.getElementById("nodo").appendChild(div2);
+        }
+        function borraNodo() {
+        var nodo = document.getElementById("nodo");
+        nodo.removeChild(document.getElementById("lista")
+    )}
+    </script>
+
+    
+
+
+
+</body>
+
+</html>

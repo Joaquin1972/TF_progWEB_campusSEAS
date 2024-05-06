@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>INSERTAR Y BORRAR EN ARRAYS</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>insertar y borrar en Arrays</h3>
+    <p>Partiendo de un array inicial, pulsa en los botones para insertar o borrar elementos</p>
+    
+
+    <input type="button" id="mostrar" onclick="mostrar()" value="Mostrar Array" class="boton">
+    <input type="button" id="insertarI" onclick="insertarI()" value="Insertar al inicio" class="boton">
+    <input type="button" id="insertarF" onclick="insertarF()" value="Insertar al final" class="boton">
+    <input type="button" id="borrarI" onclick="borrarI()" value="Borrar al inicio" class="boton">
+    <input type="button" id="borrarF" onclick="borrarF()" value="Borrar al final" class="boton">
+    <input type="button" id="inserta2" onclick="inserta2()" value="Inserta en la tercera posición" class="boton">
+    <input type="button" id="inserta3" onclick="inserta3()" value="Inserta en la tercera posición y borra actual" class="boton">
+
+    <div id="texto">
+
+
+    </div>
+
+
+    <img src="img/insertar.PNG" alt="insertar">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        var nombres = ["MARIA", "JUAN", "PEDRO", "ISABEL", "PEPE", "FERNANDO", "ROBERTO"];
+        function mostrar() {
+            document.getElementById("texto").innerHTML = nombres;
+        } 
+        function insertarI() {
+            nuevoNombre = prompt ("Indica el nuevo nombre a insertar")
+            nombres.unshift(nuevoNombre)
+            mostrar()
+        }
+        function insertarF() {
+            nuevoNombre = prompt ("Indica el nuevo nombre a insertar")
+            nombres.push(nuevoNombre)
+            mostrar()
+
+        }
+        function borrarI() {
+           nombres.shift()
+           mostrar()
+        }
+        function borrarF() {
+           nombres.pop()
+           mostrar()
+        }
+        function inserta2 () {
+            nuevoNombre = prompt ("Indica el nuevo nombre a insertar en la posición 3")
+            nombres.splice(2,0,nuevoNombre)
+            mostrar()
+        }
+        function inserta3 () {
+            nuevoNombre = prompt ("Indica el nuevo nombre a insertar en la posición 3 y borra actual")
+            nombres.splice(2,1,nuevoNombre)
+            mostrar()
+        }
+
+
+    </script>
+
+    
+
+
+
+</body>
+
+</html>

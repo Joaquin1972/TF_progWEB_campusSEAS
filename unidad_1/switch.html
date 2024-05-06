@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>SWITCH</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Estructura de control de flujo SWITCH</h3>
+<p>Pulsa en el botón para conocer el horario de apertura:</p>
+    <input type="button" onclick="horario()" class="boton" value="Consulta horario">
+    <img src="img/switch2.PNG" alt="switch">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function horario() {
+            var dia_semana = prompt("Dime dia de la semana:(lu, ma, mi, ju, vi, sa, do)")
+            dia_semana = dia_semana.toLowerCase();
+            switch (dia_semana) {
+                case "lu": alert("El horario es de 17 a 21h");
+                    break;
+                case "ma": alert("El horario es de 15 a 21h");
+                    break;
+                case "mi": alert("El horario es de 12 a 18h");
+                    break;
+                case "ju": alert("El horario es de 13 a 20h");
+                    break;
+                case "vi": alert("El horario es de 10 a 16h");
+                    break;
+                case "sa": alert("Hoy esta cerrado");
+                    break;
+                case "do": alert("Hoy está cerrado");
+                    break;
+                default: alert("No entiendo el día que me dices");
+                    break;
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

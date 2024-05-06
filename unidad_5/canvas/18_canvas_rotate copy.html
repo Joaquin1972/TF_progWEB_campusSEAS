@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript">
+    function retornarLienzo(x) {
+      var canvas = document.getElementById(x);
+      if (canvas.getContext) {
+        var lienzo = canvas.getContext("2d");   
+        return lienzo;
+      } else
+        return false;
+    }
+    
+    
+    function dibujar() {
+      var lienzo=retornarLienzo("lienzo1");
+      if (lienzo) {
+        lienzo.clearRect(0,0,600,600);
+        lienzo.save();
+        lienzo.fillStyle="rgb(255,0,0)";
+        lienzo.translate(300,300);    
+        lienzo.rotate(avance);    
+        lienzo.fillRect(-100,-100,200,200);
+        lienzo.restore();
+        avance+=0.05;
+        if (avance>Math.PI*2)
+          avance=0;
+      }
+    }
+    
+    var avance=0;
+    function inicio() {
+      setInterval(dibujar,50);
+    }
+    
+    </script>
+
+
+
+</head>
+
+<body onload="dibujar()">
+  <header>
+    <h1>HTML5 Y CSS3 U5</h1>
+  </header>
+  <nav>
+    <a href="../index.html">Inicio U5</a>
+
+  </nav>
+  <section>
+    <article>
+      <h4>ROTAR</h4>
+      <canvas id="lienzo1" width="600" height="600" style="background-color: antiquewhite;">
+        Su navegador no permite utilizar Canvas
+      </canvas>
+    </article>
+  </section>
+
+  <footer>
+    <p>Todos los derechos reservados</p>
+    <p>JSS - 2024</p>
+  </footer>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Evento jQUERY mousedown/mouseup</title>
+    <link rel='stylesheet' href='css/styles.css' type='text/css' media='screen' charset='utf-8'/>
+    
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+          // $("img").hide();
+            $("td").mousedown(function(){
+                $(this).css("background-color", "yellow")
+            })
+            $("td").mouseup(function(){
+                $(this).css("background-color", "")
+            })
+            $("#btn_codigo").click(function(){
+                $("img").toggle("1000");
+            })
+       })
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <h1>JQUERY U4</h1>
+    </header>
+    <nav>
+            <a href="../index.html">Inicio U5</a>
+    </nav>  
+    
+  <div class="principal">
+      <h2>Evento mousedown y mouseup</h2>
+      <p>Pulsa en las celdas y verás el efecto</p>
+     
+      <table>
+        <tr>
+          <td>CELDA 1.1</td>
+          <td>CELDA 1.2</td>
+        </tr>
+        <tr>
+          <td>CELDA 2.1</td>
+          <td>CELDA 2.2</td>
+        </tr>
+      </table>
+      <input type="button" id="btn_codigo" value="Pulsa para mostrar/ocultar el código que lo realiza"></input><br>
+
+    <img src="img/mouseupdown.png" alt="mouseupdown"  class="img_codigo">
+    </div>  <footer>
+      <p>Todos los derechos reservados</p>
+      <p>JSS - 2024</p>
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Campo de texto obligatorio</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+    <header>
+        <h1>JAVASCRIPT AVANZADO U3</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 3</a>
+    </nav>
+    <main>
+        <h3>Campo de texto obligatorio</h3>
+        <p>Si no se introduce numero, da un error</p>
+        <form action="" id="formulario" onsubmit="return validacion()">
+            INTRODUCE NUMERO
+            <input type="text" id="campo" />
+            <input type="submit" value="Enviar" />
+          </form>
+        <div id="texto">
+
+
+        </div>
+        <img src="img/numero.PNG" alt="numero">
+    </main>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+      function validacion() {
+        valor = document.getElementById("campo").value;
+        if (isNaN(valor)) {
+          texto.innerHTML = "No es un numero válido";
+          return false;
+        }}
+    </script>
+
+
+
+
+</body>
+
+</html>

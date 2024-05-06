@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Math</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Objeto math</h3>
+    <p>Pulsa en el botón para mostrar propiedades y metodos del objeto math:
+    </p>
+    <input type="button" id="mostrar" onclick="objetoMath()" value="Objeto Math" class="boton">
+    
+
+    <div id="texto">
+
+
+    </div>
+
+
+    <img src="img/math.PNG" alt="math">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        
+        function objetoMath () {
+            document.getElementById("texto").innerHTML = "";
+            mostrarMath("El número 'e' es: " + Math.E)
+            mostrarMath("El número 'pi' es: " + Math.PI)
+            mostrarMath("La raiz cuadrada de 25 es: " + Math.sqrt(25))
+            mostrarMath("El método ceil para 13,74 es: " + Math.ceil(13.74))
+            mostrarMath("El método floor para 13,74 es: " + Math.floor(13.74))
+            mostrarMath("El round para 13,74 es: " + Math.round(13.74))
+            mostrarMath("9 elevado al cubo es: " + Math.pow(9,3))
+            mostrarMath("Doy un numero al azar: " + Math.round(Math.random()*100))
+         }
+        function mostrarMath(e) {
+            document.getElementById("texto").innerHTML += e + "<br>";
+        } 
+        
+
+    </script>
+
+    
+
+
+
+</body>
+
+</html>

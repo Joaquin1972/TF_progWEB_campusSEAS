@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Select</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+    <header>
+        <h1>JAVASCRIPT AVANZADO U3</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 3</a>
+    </nav>
+    <main>
+        <h3>Obtener los valores de Select</h3>
+        <p>Elige un valor de la lista y pulsa enviar</p>
+        <form action="" id="formulario">
+            
+            <select id="opciones" name=opciones>
+                <option value="0" selected></option>
+                <option value="1">Primer valor</option>
+                <option value="2">Segundo valor</option>
+                <option value="3">Tercer valor</option>
+                <option value="4">Cuarto valor</option>
+             </select> <br>   
+                <input type="button" name="" value="Enviar" id="" onclick="respuesta()" class="boton">
+           
+        </form>
+        <div id="texto">
+
+        </div>
+        <img src="img/select.PNG" alt="checked">
+    </main>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+            function respuesta() {  
+                //Obtenemos la referencia a la lista
+                var lista = document.getElementById("opciones");
+                //Obtenemos el indice seleccionado
+                var indiceSeleccionado = lista.selectedIndex;
+                //Con este indice y el array "options" obtenemos la opcion selccionada
+                var opcionSeleccionada = lista.options[indiceSeleccionado];
+                //Obtenemos el valor y el texto seleccionado.
+                var textoSeleccionado = opcionSeleccionada.text;
+                var valorSeleccionado = opcionSeleccionada.value;
+                if (valorSeleccionado==0) {
+                texto.innerHTML = "Debes seleccionar algún valor"
+                    } else {
+                texto.innerHTML = "Opción Seleccionada: " + textoSeleccionado 
+                + " - Valor de la opción: " + valorSeleccionado;
+                }
+            }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

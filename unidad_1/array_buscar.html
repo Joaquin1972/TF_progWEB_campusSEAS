@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>DO WHILE</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Buscar en Arrays</h3>
+    <p>Selecciona un nombre en el seletor y te dirá en que posición está en el array interno ... si está el nombre</p>
+    <select name="buscar" id="buscar">
+        <option value="MARIA" selected>MARIA</option>
+        <option value="JUAN">JUAN</option>
+        <option value="JOAQUIN">JOAQUIN</option>
+        <option value="NOA">NOA</option>
+        <option value="ISABEL">ISABEL</option>
+        <option value="PEPE">PEPE</option>
+        <option value="FERNANDO">FERNANDO</option>
+        <option value="ROBERTO">ROBERTO</option>
+        <option value="PEDRO">PEDRO</option>
+        <option value="JUAN">JUAN</option>
+        <option value="PEPE">PEPE</option>
+
+    </select>
+
+    <input type="button" id="btnbuscar" onclick="buscar()" value="¿Cuándo que posición del array está?">
+
+    <div id="texto">
+
+
+    </div>
+
+
+    <img src="img/buscar.PNG" alt="ordenar">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function buscar() {
+            var e = document.getElementById("buscar");
+            var nombreSeleccionado = e.value;
+            var Nombres = ["MARIA", "JUAN", "PEDRO", "ISABEL", "PEPE", "FERNANDO", "ROBERTO"];
+            var contador;
+            var encontrado = -1;
+            for (contador = 0; contador < Nombres.length; contador++) {
+                if (Nombres[contador] == nombreSeleccionado) {
+                    encontrado = contador+1;
+                    break;
+                }
+            }
+            if (encontrado == -1) {
+                document.getElementById("texto").innerHTML = "Nombre no encontrado"
+            } else {
+                document.getElementById("texto").innerHTML = nombreSeleccionado + " está en la posición: " + (contador+1)
+            }
+        }        
+    </script>
+
+    </script>
+
+
+
+</body>
+
+</html>

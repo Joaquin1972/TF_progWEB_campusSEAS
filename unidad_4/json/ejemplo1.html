@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>JSON</title>
+    <!-- <link rel='stylesheet' href='../../css/styles.css' type='text/css' media='screen' charset='utf-8' /> -->
+    <script>
+        window.onload = function () {
+
+            const jugador = '{"nombre":"Juan", "edad":30, "puesto":"delantero"}'
+            const obj = JSON.parse(jugador);
+            document.getElementById("demo").innerHTML = obj.nombre + " juega de " + obj.puesto + " y tiene " + obj.edad + " años.";
+
+            const colores = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+            const myArr = JSON.parse(colores);
+            for (var i = 0; i < myArr.length; i++) {
+                document.getElementById("demo2").innerHTML += myArr[i] + "<br>";
+            }
+        }       
+    </script>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        img {
+            border: 1px solid black;
+            box-shadow: 1px 1px 3px gray;
+            border-radius: 5px;
+        }
+
+        #demo,
+        #demo2 {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            padding: 5px;
+            background-color: rgba(128, 128, 128, 0.5);
+            width: 60%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h3>JSON.PARSE()</h3>
+    <P>Un uso habitual de JSON es el intercambio de datos desde/hacia un servidor</P>
+    <p>Cuando recibimos datos desde un servidor es siempre tipo cadena</p>
+    <p><b>JSON.parse()</b> es un <b>método en JavaScript</b> que se utiliza para analizar (parsear) una <b>cadena JSON y
+            convertirla en un objeto JavaScript</b></p>
+    <p>Ejemplo:</p>
+    <img src="img/parse1.PNG" alt="parse_obj">
+    <p id="demo"></p>
+    <p>Cuando los datos de JSON son una matriz, el metodo JSON.parse() devuelve una matriz de JavaScript y la podemos trabajar como tal</p>
+    <p>Ejemplo:</p>
+    <img src="img/parse2.PNG" alt="parse_obj">
+    <p id="demo2"></p>
+
+
+</body>
+
+</html>

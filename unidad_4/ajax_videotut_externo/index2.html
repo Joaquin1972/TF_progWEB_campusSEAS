@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Apliacion AJAX</title>
+    <!-- <link
+      rel="stylesheet"
+      href="style.css"
+      type="text/css"
+      media="screen"
+      charset="utf-8"
+    /> -->
+  </head>
+  <body>  <a href="../index.html">Volver U5</a><br><br>
+    <button id="boton">Cargar Sitio</button>
+    <div id="response"></div>
+
+    <script>
+      function ajax() {
+        //Creo un objeto tipo HTTP
+        //Este objeto se encarga de realizar la solicitud asincrona
+        const http = new XMLHttpRequest();
+        //url o ficheros que queremos cargar
+        const url = "holatodos.txt";
+        //Defino que va a hacer mi objeto http
+        //Creo una funcion que permite mapear el estado de la solicitud
+        //se activa cada vez la solicitud cambia de estado
+        http.onreadystatechange = function () {
+          //Si se cumplen estas dos condiciones la solicitud fue exitosa
+          if (this.readyState == 4 && this.status == 200) {
+            alert (this.responseText);
+            document.getElementById("response").innerHTML = this.responseText;
+          } 
+        }
+          //configuramos y mandamos a ejecutar la funcion
+          http.open("GET", url);
+          http.send();
+        };
+      
+
+        
+      document.getElementById("boton").addEventListener("click", function () {
+        ajax();
+      });
+    </script>
+  </body>
+</html>

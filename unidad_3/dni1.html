@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>DNI correcto</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+    <header>
+      <h1>JAVASCRIPT AVANZADO U3</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 3</a>
+    </nav>
+    <main>
+        <h3>DNI correcto (1)</h3>
+        <p>Introduce un DNI correcto</p>
+        <form action="" id="formulario" onsubmit="return validacion()">
+            INTRODUCE DNI
+            <input type="text" id="campo" />
+            <input type="submit" value="Enviar" />
+          </form>
+        <div id="texto">
+
+
+        </div>
+        <!-- <img src="img/email.PNG" alt="email"> -->
+    </main>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function validacion() {
+        valor = document.getElementById("campo").value;
+        var letrasDNI = [
+          "T",
+          "R",
+          "W",
+          "A",
+          "G",
+          "M",
+          "Y",
+          "F",
+          "P",
+          "D",
+          "X",
+          "B",
+          "N",
+          "J",
+          "Z",
+          "S",
+          "Q",
+          "V",
+          "H",
+          "L",
+          "C",
+          "K",
+          "E",
+          "T",
+        ];
+        // comprobamos que tenga formato correcto
+        // ^: Coincide con el inicio de la cadena.
+        // [X-Z0-9]: Coincide con un solo carácter que puede ser una letra de la 'X' a la 'Z' (mayúsculas) o un dígito del 0 al 9.
+        // {1}: Indica que se espera exactamente un carácter de la clase anterior (X-Z0-9).
+        // [0-9]{7}: Coincide con exactamente 7 dígitos.
+        // [A-Z]: Coincide con un solo carácter que debe ser una letra mayúscula de la 'A' a la 'Z'.
+        // $: Coincide con el final de la cadena.
+        if (!/^[X-Z0-9]{1}[0-9]{7}[A-Z]$/.test(valor)) {
+          alert("dni incorrecto");
+          return false;
+        }
+        //comprobamos caracter inicial
+        //Esta expresión regular /^[XYZ]{1}/ se utiliza para verificar si la cadena valor comienza con uno de los caracteres especificados en el conjunto entre corchetes {} (es decir, X, Y o Z). Vamos a desglosar la expresión regular:
+
+        // ^: Coincide con el inicio de la cadena.
+        // [XYZ]: Coincide con un solo carácter que debe ser X, Y o Z.
+        // {1}: Indica que se espera exactamente un carácter del conjunto anterior.
+        // En resumen, la expresión regular verifica si la cadena valor comienza con una de las letras X, Y o Z. Si la prueba (test()) devuelve true, significa que la cadena cumple con este patrón; de lo contrario, devuelve false.
+
+        // Por ejemplo, si valor es "X123", la expresión regular devolverá true. Si valor es "A123", la expresión regular devolverá false.
+        
+        if (/^[XYZ]{1}/.test(valor)) {
+          var pos =
+            str_replace(["X", "Y", "Z"], ["0", "1", "2"], valor).substring(
+              0,
+              8
+            ) % 23;
+            //toma el valor del caracter en la posicion 8 de valor y lo compara con la subcadena de 1 caracter de letrasDNI en la posicion "pos"
+          if (valor.charAt(8) != letrasDNI.substring(pos, pos + 1)) {
+            alert("dni incorrecto");
+            texto.innerHTML = "DNI incorrecto"
+            return false;
+          } else if (valor.charAt(8) != letrasDNI[valor.substring(0, 8) % 23]) {
+            alert("dni incorrecto");
+            texto.innerHTML = "DNI incorrecto"
+            return false;
+          }
+        }
+        alert("dni correcto");
+        texto.innerHTML = "DNI correcto"
+      }
+    </script>
+
+
+
+
+</body>
+
+</html>

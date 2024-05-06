@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Objeto Location</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Objeto Location</h3>
+    <p>Pulsa para ver informacion del objeto location</p>
+    <input type="button" onclick="indicaLocation()" value="Objeto Location" class="boton">
+    
+    
+
+    <div id="texto">
+
+
+    </div>
+
+
+    <img src="img/location.PNG" alt="location">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function indicaLocation() {
+            document.getElementById("texto").innerHTML = 
+            "Href: " + location.href + 
+            "<br>Host: " + location.host +
+            "<br>Hostname: " + location.hostname +
+            "<br>Pathname: " + location.pathname +
+            "<br>Port: " + location.port +
+            "<br>Protocol: " + location.protocol 
+        }
+    </script>
+
+    
+
+
+
+</body>
+
+</html>

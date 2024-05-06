@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Fecha</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Objeto fecha</h3>
+    <p>Pulsa en el botón para mostrar información de la fecha y hora actual:
+    </p>
+    <input type="button" id="mostrar" onclick="introFecha()" value="Mostrar datos de la fecha y hora de hoy" class="boton">
+    
+
+    <div id="texto">
+
+
+    </div>
+
+
+    <img src="img/fecha.PNG" alt="cadena">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        
+        function introFecha () {
+            document.getElementById("texto").innerHTML = ""
+            fecha = new Date()
+            mostrarFecha(fecha)
+            dia = fecha.getDate()
+            mostrarFecha("El día es: " + dia)
+            mes = fecha.getMonth()
+            meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]
+            mes = meses[mes]
+            mostrarFecha("El mes es: " + mes)
+            anyo = fecha.getFullYear()
+            mostrarFecha("El año es: " + anyo)
+            hora = fecha.getHours()
+            mostrarFecha("La hora es: " + hora)
+            minutos = fecha.getMinutes()
+            mostrarFecha("Los minutos son: " + minutos)
+            segundos = fecha.getSeconds()
+            mostrarFecha("Los segundos son: " + segundos)
+         }
+        function mostrarFecha(e) {
+            document.getElementById("texto").innerHTML += e + "<br>";
+        } 
+        
+
+    </script>
+
+    
+
+
+
+</body>
+
+</html>

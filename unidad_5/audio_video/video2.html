@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Video en la HTML5</title>
+    <style>
+        .botonr {
+            width: auto;
+            height: auto;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: gray;
+            color: aliceblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>HTML5 Y CSS3 U5</h1>
+    </header>
+    <nav>
+        <a href="../index.html">Volver U5</a>
+    </nav>
+    <aside></aside>
+    <section>
+        <article>
+            <h4>Inserción de video con la etiqueta Video</h4>
+            <p>Hago uso de javascript con una api de video</p>
+            <video width="640px" controls poster="" id="mivideo">
+                <source src="video/video1.mp4" type="video/mp4">
+                <source src="video/video1.ogg" type="video/ogg">
+                <source src="video/video1.webm" type="video/webm">
+                Este navegador no permite videos
+            </video>
+            <div>
+                <button onclick="reproduce()" class="botonr">Play</button>
+                <button onclick="para()" class="botonr">Stop</button>
+                <button onclick="adelanta()" class="botonr">>></button>
+                <button onclick="retrasa()" class="botonr"><<</button>
+                <button onclick="grande()" class="botonr">Big</button>
+                <button onclick="small()" class="botonr">Small</button>
+                <button onclick="normal()" class="botonr">Normal</button>
+            </div>
+        </article>
+    </section>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        var video1 = document.getElementById("mivideo")
+        function reproduce() {
+            video1.play();
+        }
+        function para() {
+            video1.pause();
+        }
+        function adelanta() {
+            video1.currentTime +=2
+        }
+        function retrasa() {
+            video1.currentTime -=2
+        }
+        function grande() {
+            video1.width = "800"
+        }
+        function small() {
+            video1.width = "400"
+        }
+        function normal() {
+            video1.width = "640"
+        }
+    </script>
+</body>
+
+</html>

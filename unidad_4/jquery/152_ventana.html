@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Evento jQUERY mousedown/mouseup</title>
+  <link rel='stylesheet' href='css/styles.css' type='text/css' media='screen' charset='utf-8' />
+
+  <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(function () {
+        var x = 0;
+        $(".contenedor").scroll(function () {
+          $(".contador1").text("Scroll: " + (x += 1));
+        });
+        var y = 0;
+        $(window).resize(function () {
+          $(".contador2").text("Redimensión: " + (y += 1))
+        })
+      });
+      $("#btn_codigo").click(function () {
+        $("img").toggle("1000");
+      })
+    })
+       
+  </script>
+
+</head>
+
+<body>
+  <header>
+    <h1>JQUERY U4</h1>
+  </header>
+  <nav>
+          <a href="../index.html">Inicio U5</a>
+  </nav>  
+
+  <div class="principal">
+    <h2>Evento ventana</h2>
+    <h3>Desplaza el scroll del texto siguiente y redimensiona la ventana</h3>
+
+    <div class="contenedor">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod repellat
+      rerum id tempore recusandae eveniet pariatur enim totam illum ullam fuga
+      dicta expedita itaque nam, atque porro, distinctio perferendis facilis sed
+      consectetur, culpa impedit ad. Repudiandae in nesciunt aperiam
+      consectetur.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod repellat
+      rerum id tempore recusandae eveniet pariatur enim totam illum ullam fuga
+      dicta expedita itaque nam, atque porro, distinctio perferendis facilis sed
+      consectetur, culpa impedit ad. Repudiandae in nesciunt aperiam
+      consectetur.
+    </div>
+    <p class="contador1">0</p>
+    <p class="contador2">0</p>
+    <input type="button" id="btn_codigo" value="Pulsa para mostrar/ocultar el código que lo realiza"></input><br>
+
+    <img src="img/ventana.png" alt="mouseupdown" class="img_codigo">
+  </div>  <footer>
+    <p>Todos los derechos reservados</p>
+    <p>JSS - 2024</p>
+</footer>
+</body>
+
+</html>

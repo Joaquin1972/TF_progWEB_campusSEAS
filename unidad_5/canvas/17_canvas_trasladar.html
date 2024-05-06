@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript">
+    function retornarLienzo(x) {
+      var canvas = document.getElementById(x);
+      if (canvas.getContext) {
+        var lienzo = canvas.getContext("2d");   
+        return lienzo;
+      } else
+        return false;
+    }
+    
+    function dibujarTriangulo(lienzo,x,y,base,altura) {
+      lienzo.save();
+      lienzo.translate(x,y);
+      lienzo.fillStyle="rgb(255,0,0)";
+      lienzo.beginPath();
+      lienzo.moveTo(base/2,0);
+      lienzo.lineTo(0,altura);
+      lienzo.lineTo(base,altura);
+      lienzo.lineTo(base/2,0);
+      lienzo.fill();
+      lienzo.restore();
+    }
+    
+    function dibujar() {
+      var lienzo=retornarLienzo("lienzo1");
+      if (lienzo) {
+        for(var col=0;col<550;col+=30)
+          dibujarTriangulo(lienzo,col,10,30,130);
+      }
+    }
+    
+    </script>
+    
+    </head>
+    <body onload="dibujar()">
+      <header>
+        <h1>HTML5 Y CSS3 U5</h1>
+      </header>
+      <nav>
+        <a href="../index.html">Inicio U5</a>
+
+      </nav>
+      <section>
+        <article>
+          <h4>Trasladar</h4>
+          <canvas id="lienzo1" width="400" height="400" style="background-color: antiquewhite;">
+            Su navegador no permite utilizar Canvas
+          </canvas>
+        </article>
+      </section>
+    
+      <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+      </footer>
+    
+    </html>

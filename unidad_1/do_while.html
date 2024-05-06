@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>DO WHILE</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Estructura de control de flujo DO WHILE</h3>
+    <p>¿Cuándo se descubrio América?</p>
+    <input type="button" value="Responde" id="boton" class="boton" onclick="responde()">
+    <div id="texto"></div>
+    <img src="img/dowhile.PNG" alt="do_while">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function responde() {
+            var intentos = 0
+            do {
+                intentos += 1
+                var respuesta = prompt("Respuesta???")
+            } while (respuesta != 1492)
+            document.getElementById("texto").innerHTML = "Has respondido en el intento: " + intentos
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/e38544c22e.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Audio en la HTML5</title>
+</head>
+
+<body>
+    <header>
+        <h1>HTML5 Y CSS3 U5</h1>
+    </header>
+    <nav>
+        
+        <a href="../index.html">Volver U5</a>
+       
+    </nav>
+    <aside></aside>
+    <section>
+        <article>
+            <h4>"Reproductor" de audio</h4>
+            <p>Hago uso de un <b>API de audio</b> en javascript,asi como <a href="https://fontawesome.com/" target="_blank">iconos de FontAwesome</a></p>
+            <p>Elige una canción y pincha en Enviar para cargarla en el reproductor</p>
+<br>
+            <form action="" method="post" id="repertorio">
+                <input type="radio" id="opcion1" name="opcion" value="opcion1">
+                <label for="opcion1">Canción 1</label><br>
+                <input type="radio" id="opcion2" name="opcion" value="opcion2">
+                <label for="opcion2">Canción 2</label><br>
+                <input type="radio" id="opcion3" name="opcion" value="opcion3">
+                <label for="opcion3">Canción 3</label><br><br>
+                <input type="button" id="enviar" onclick="cambiaCancion()" value="Enviar"><br>
+            </form><br>
+            <audio id="reproductor" controls>
+                <source id="cancionActual" src="" type="audio/mp3" />
+                Lo siento, tu navegador no soporta audio de HTML5.
+                <p>
+                Puede descargar el archivo MP3
+                <a href="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">MP3</a>.
+                </p>
+            </audio>
+            <br>
+            <button name="Play_audio" onclick="audio.play()">
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <button name="Pause_audio" onclick="audio.pause()">
+                <i class="fa-solid fa-pause"></i>
+            </button>
+            <button name="Volume_Up" onclick="audio.volume+=0.2">
+                <i class="fa-solid fa-volume-high"></i>
+            </button>
+            <button name="Volume_DOWN" onclick="audio.volume-=0.2">
+                <i class="fa-solid fa-volume-low"></i>
+            </button>
+            <button name="Volume_OFF" onclick="audio.volume=0">
+                <i class="fa-solid fa-volume-xmark"></i>
+            </button>
+            <button name="GotoBegin" onclick="audio.currentTime=0">
+                <i class="fa-solid fa-backward-fast"></i>
+            </button>
+            <button name="Backward" onclick="audio.currentTime=audio.currentTime-2">
+                <i class="fa-solid fa-backward"></i>
+            </button>
+            <button name="Forward" onclick="audio.currentTime=audio.currentTime+2">
+                <i class="fa-solid fa-forward"></i>
+            </button>
+            <!-- <div id="cancionActiva">
+
+    </div> -->
+
+        </article>
+
+    </section>
+
+
+    <br>
+
+
+    <script type="text/javascript">
+        function cambiaCancion() {
+            if (document.getElementById("opcion1").checked) {
+                document.getElementById("cancionActual").src = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+
+            }
+            if (document.getElementById("opcion2").checked) {
+                document.getElementById("cancionActual").src = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3";
+
+            }
+            if (document.getElementById("opcion3").checked) {
+                document.getElementById("cancionActual").src = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3";
+            }
+            audio.load();
+            document.getElementById("cancionActiva").innerHTML = "<br><br>Cancion en el reproductor: " + document.getElementById("cancionActual").src
+        }
+
+        let audio = document.getElementById("reproductor");
+    </script>
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+
+</html>

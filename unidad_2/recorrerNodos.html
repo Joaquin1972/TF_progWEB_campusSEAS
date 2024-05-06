@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Recorrer Nodos</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>DOM Y EVENTOS EN JAVASCRIPT U2</h1>
+    </header> 
+    <nav>
+        <a href="index.html">Volver a unidad 2</a>
+    </nav>
+    <main>
+        <p>Vamos a recorrer estos enlaces para ver su número y a donde enlazan. Pulsa en el botón:</p>
+        <button onclick="mostrarEnlaces()" class="boton">Recorrer nodo de enlaces</button>
+
+        <div style="text-align: center; background-color: rgba(95, 158, 160, 0.5); padding: 10px; border-radius: 5px">
+        <a href="https://www.heraldo.es" name="prensa">Heraldo</a><br>
+        <a href="https://www.marca.com" name="prensa">Marca</a><br>
+        <a href="https://www.elpais.com" name="prensa">El Pais</a><br>
+        <a href="https://www.rtve.es" name="prensa">RTVE</a><br>
+        <a href="https://www.elmundo.com" name="prensa">El Mundo</a><br>
+        </div>
+        <div id="texto">
+
+
+        </div>
+        <img src="img/recorrer.PNG" alt="recorrer">
+
+        <footer>
+            <p>Todos los derechos reservados</p>
+            <p>JSS - 2024</p>
+        </footer>
+    </main>
+    <script type="text/javascript">
+        function mostrarEnlaces() {
+        Enlaces = document.getElementsByName("prensa");
+                numeroEnlaces = Enlaces.length;
+                document.getElementById("texto").innerHTML = "El nº de enlaces es:" + numeroEnlaces + "<br>"
+                for (i=0; i < numeroEnlaces; i++) {
+                    document.getElementById("texto").innerHTML 
+                    += Enlaces[i].href + "<br>";
+                }
+            }
+  
+    </script>
+
+
+
+
+
+</body>
+
+</html>

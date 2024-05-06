@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Propiedades Avanzadas CSS3</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+    <script type="text/javascript"> window.onload = function () {
+            //buscar elemento en el DOM
+            elemento = document.getElementById("cuadrado")
+        }
+        //ida: cambiar posición y color de fondo. 
+        function ida() {
+            elemento.style.left = "600px";
+            elemento.style.backgroundColor = "white";
+        }
+        //vuelta: volver a posición y color original. 
+        function vuelta() {
+            elemento.style.left = "20px";
+            elemento.style.backgroundColor = "yellow";
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>HTML5 Y CSS3 U5</h1>
+    </header>
+    <nav>
+      <a href="../index.html">Inicio U5</a>
+    </nav>
+    <section>
+        <article class="inicio">
+            <h4>Transiciones con CSS3(hover)</h4>
+            <div class="transicion1">REAL ZARAGOZA</div><br>
+            <h4>Transiciones con JavaScript</h4>
+            <div id="fondocaja">
+                <div id="cuadrado">Pulsa el botón que quieras</div>
+            </div>
+            <div class="contenedor-botones">
+                <input class="boton" type="button" value="Hacia la dcha" onclick="ida()" />
+                <input class="boton" type="button" value="Hacia la izda" onclick="vuelta()" />
+            </div>
+
+            </div>
+
+        </article>
+    </section>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Eventos Raton</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+    <header>
+        <h1>DOM Y EVENTOS EN JAVASCRIPT U2</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 2</a>
+    </nav>
+    <main>
+        <h3>Eventos de ratón</h3>
+        <div id="texto">
+            Pulsa el raton por la pantalla y te diremos la coordenada donde has pulsado.
+        </div>
+        
+        <img src="img/raton4.PNG" alt="evraton">
+    </main>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+
+    </footer>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            document.onclick = muestraCoordenadas;
+        }
+        function muestraCoordenadas(elEvento) {
+            var evento = elEvento || window.event;
+            //Detectar si el navegador es Internet Explorer
+            var ie = navigator.userAgent.toLowerCase().indexOf("msie") != -1;
+            if (ie) {
+                coorX = evento.clientX + document.body.scrollLeft;
+                coorY = evento.clientY + document.body.scrollTop;
+            }
+            else {
+            var coorX = evento.pageX;
+            var coorY = evento.pageY;
+            }
+            document.getElementById("texto").innerHTML += "<br>Has pulsado el ratón en la coordenada " + coorX + " - " + coorY
+        }
+    </script>
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Evento jQUER mousemove</title>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js">
+    </script>
+        <script type="text/javascript">
+               $(document).ready(function() {
+                    //  $("img").hide();
+             $(document).mousemove(function() {
+                $("#coord_x").text("Coordenada X = " + event.clientX)
+                $("#coord_y").text("Coordenada Y = " + event.clientY)
+        });
+            $("#btn_codigo").click(function(){
+                $("img").toggle("1000");
+            })
+           
+      });
+   
+
+
+
+          
+    </script>
+    <link rel='stylesheet' href='css/styles.css' type='text/css' media='screen' charset='utf-8'/>
+  </head>
+  <body>
+    <header>
+      <h1>JQUERY U4</h1>
+    </header>
+    <nav>
+            <a href="../index.html">Inicio U5</a>
+    </nav>  
+        <div class="principal">
+        <h2>Evento mousemove</h2>
+    <p>Desplaza el ratón y se indicará la coordenada de éste.</p>
+   
+
+    <p id="coord_x">Coordenada X =</p>
+    <p id="coord_y">Coordenada Y =</p>
+    <input type="button" id="btn_codigo" value="Pulsa para mostrar/ocultar el código que lo realiza"></input><br>
+
+    <img src="img/mousemove.png" alt="mousemove" class="img_codigo">
+</div>
+<footer>
+  <p>Todos los derechos reservados</p>
+  <p>JSS - 2024</p>
+</footer>
+  </body>
+</html>

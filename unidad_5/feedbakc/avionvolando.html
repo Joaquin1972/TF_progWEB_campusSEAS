@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Ejercicio feedback Tema 5 JavaScript</title>
+
+    <link rel='stylesheet' href='css/styles.css' type='text/css' media='screen' charset='utf-8' />
+    <script type="text/JavaScript" src="js/avion.js">
+   </script>
+</head>
+
+<body>
+    <header>
+        <h1>Animaciones con CSS3 y JavaScript de Avión Volando en la Playa</h1>
+        <h3>Ejercicio de feedback</h3>
+    </header>
+    <section>
+        <article>
+            <!-- Creo un "panel de mando" del avion -->
+            <div class="mando">
+                <!-- la animacion parte de parada -->
+                Play para arrancar, stop para parar:<br>
+                <input type="button" name="stop" value="stop" class="boton" onclick="parar()" />
+                <input type="button" name="play" value="play" class="boton" onclick="seguir()" />
+                <br>Elige la velocidad:<br>
+                <!-- Select para variar velocidad -->
+                <select name="vel" onchange="velocidad(this.value)">
+                    <option value="4" selected="selected">Normal</option>
+                    <option value="10">Muy lento</option>
+                    <option value="8">Lento</option>
+                    <option value="2">Rápido</option>
+                    <option value="1">Muy Rápido</option>
+                </select>
+            </div>
+            <!-- recuadro de animacion -->
+            <div id="visor">
+                <img id="playa" src="img/playa3.jpg" alt="playa">
+                <img id="avion" src="img/avion.png" alt="avion">
+            </div>
+        </article>
+    </section>
+</body>
+</html>

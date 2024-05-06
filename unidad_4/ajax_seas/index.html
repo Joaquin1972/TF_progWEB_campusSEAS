@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'	'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <title>Page Title</title>
+        <script type="text/javascript">
+            function descargaArchivo() {
+                //obtener la instancia del objeto XMLhttpRequest
+                if (window.XMLHttpRequest) {
+                    peticion_http = new XMLHttpRequest();
+                }
+                else if (window.ActiveXObject) {
+                    peticion_http = new ActiveXObject("Microsoft.XMLHTTP")
+                }
+                    //preparar la funcion de respuesta
+                peticion_http.onreadystatechange = muestraContenido;
+                //realizar peticion HTTP
+                peticion_http.open("GET","HolaMundo.txt", true);
+                peticion_http.send(null);
+
+                function muestraContenido () {
+                    if (peticion_http.readyState == 4) {
+                        if (peticion_http.status == 200) {
+                          //  alert(peticion_http.responseText);
+                          document.getElementById("texto").innerHTML = peticion_http.responseText;
+                        }
+                    }
+                }
+                }
+            window.onload = descargaArchivo;
+        </script>
+        <!-- <link rel='stylesheet' href='style.css' type='text/css' media='screen' charset='utf-8'/> -->
+    </head>
+    <body>
+        <a href="../index.html">Volver U5</a><br><br>
+        <a href="HolaMundo.txt">Hola Mundo</a>
+        <div id="texto">
+
+        </div>
+    </body>
+</html>

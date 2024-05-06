@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo de animaciones y transiciones con jQuery</title>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px;
+            fuente-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+// Aplica el efecto "fade in" en el párrafo cuando se carga la página.
+            $('#contenedor p').fadeIn();
+ 
+// Añade un gestor de eventos "click" al botón "boton1".
+            $('#boton1').click(function () {
+                // Aplica el efecto "fade out" en el párrafo
+                $('#contenedor p').fadeOut();
+            });
+ 
+// Añade un gestor de eventos "click" al botón "boton2".
+            $('#boton2').click(function () {
+// Aplica el efecto "slide up" en el párrafo
+                $('#contenedor p').slideUp();
+            });
+ 
+// Añade un gestor de eventos "click" al botón "boton3".
+            $('#boton3').click(function () {
+// Aplica el efecto "slide down" en el párrafo
+                $('#contenedor p').slideDown();
+            });
+        });
+    </script>
+</head>
+ 
+<body>
+	//Este el párrafo sobre el que vamos a actuar	
+    <div id="contenedor">
+        <p>Este párrafo tiene el efecto "fade in" cuando se carga la página.</p>
+    </div>
+	//Botones que hacen la animación
+    <button id="boton1">Aplica el efecto "fade out" en el párrafo.</button>
+    <button id="boton2">Aplica el efecto "slide up" en el párrafo.</button>
+    <button id="boton3">Aplica el efecto "slide down" en el párrafo.</button>
+</body>
+</html>

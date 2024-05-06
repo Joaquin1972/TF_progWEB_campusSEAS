@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Evento jQUERY dblclick</title>
+    <link rel='stylesheet' href='css/styles.css' type='text/css' media='screen' charset='utf-8'/>
+    
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $("#recuadro_dblclick1").dblclick(function(){
+            $(this).hide();
+          })
+          $("#recuadro_dblclick2").dblclick(function(){
+            $("#recuadro_dblclick1").show();
+          })
+          $("#btn_codigo").click(function(){
+                $("img").toggle("1000");
+            })
+       })
+    </script>
+    
+  </head>
+  <body>
+    <header>
+      <h1>JQUERY U4</h1>
+    </header>
+    <nav>
+            <a href="../index.html">Inicio U5</a>
+    </nav>  
+  <div class="principal">
+      <h2>Evento dblclick</h2>
+      <p>Pulsa en las celdas y verás el efecto</p>
+      <div id="recuadro_dblclick1" class="recuadro_dblclick">
+        <h3>HAZ DOBLE CLICK PARA OCULTAR ESTE RECUADRO</h3>
+      </div>
+      <div id="recuadro_dblclick2" class="recuadro_dblclick">
+        <h5>HAZ DOBLE CLICK AQUI PARA VOLVERLO A MOSTRAR</h5>
+      </div>
+     
+   
+      <input type="button" id="btn_codigo" value="Pulsa para mostrar/ocultar el código que lo realiza"></input><br>
+
+    <img src="img/dblclick.png" alt="dblclick"  class="img_codigo">
+    </div>
+  </body>  <footer>
+    <p>Todos los derechos reservados</p>
+    <p>JSS - 2024</p>
+</footer>
+</html>

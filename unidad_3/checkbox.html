@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Texto y Textarea</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+    <header>
+        <h1>JAVASCRIPT AVANZADO U3</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 3</a>
+    </nav>
+    <main>
+        <h3>Obtener los valores de CheckBox</h3>
+        <p>Lee y acepta condiciones y pulsa enviar</p>
+        <form action="" id="formulario">
+            <input type="checkbox" value="condiciones" name="condiciones" id="condiciones">He leído y acepto las condiciones
+            <br>
+            <input type="checkbox" value="privacidad" name="privacidad" id="privacidad">He leído la política de privacidad
+            <br>
+            <input type="button" value="Enviar" onclick="respuesta()" class="boton">
+        </form>
+        <div id="texto">
+
+
+        </div>
+        <img src="img/checked.PNG" alt="checked">
+    </main>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+            function respuesta() {  
+                texto.innerHTML = ""
+                var lee_condiciones = document.getElementById("condiciones")
+                texto.innerHTML = "Elemento: " + lee_condiciones.value + " - Seleccionado: " + lee_condiciones.checked + "<br>"
+                var lee_privacidad = document.getElementById("privacidad")
+                texto.innerHTML += "Elemento: " + lee_privacidad.value + " - Seleccionado: " + lee_privacidad.checked
+                if (lee_privacidad.checked && lee_condiciones.checked) {
+                    texto.innerHTML += "<br>Has leído y aceptado las condiciones"
+                } else {
+                    texto.innerHTML += "<br>Debes leer y aceptar las condiciones"
+                }
+            }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

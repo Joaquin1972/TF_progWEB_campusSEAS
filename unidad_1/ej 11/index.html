@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'	'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <title>Page Title</title>
+        <link rel='stylesheet' href='style.css' type='text/css' media='screen' charset='utf-8'/>
+        <script>
+            function validarFormulario(formulario) {
+                if (!comprobarNombre()) {
+                    alert("estoy dentro")
+                    formulario.nombre.focus();
+                    formulario.nombre.select();
+                }
+              
+                function comprobarNombre() {
+                    //compruebo que nombre no esté vacío
+                   if (formulario.nombre.value.length == 0) {
+                    alert("No has introducido ningún nombre")
+                    return false;
+                    }
+                    //elimino espacios en blanco antes y despues de nombre y elimino los intermedios
+                    var cadena = formulario.nombre.value;
+                    cadena = cadena.trim();
+                    cadena = cadena.replace(/\s/g,"");
+                    n = cadena.length;
+                    var letra;
+                    //compruebo caracter a caracter que no sea numero
+                    for (i=0; i<n; i++) {
+                        letra = cadena.charAt(i)
+                        //entra en el if si letra no es tipo caracter
+                        if (!isNaN(letra)) {
+                            alert("Has introducido numeros");
+                            return false;
+                            break;
+                        }
+                    }
+                    return true;
+                }
+            }
+                if (formulario.edad.value>120) {
+                    alert("Edad erronea");
+                }
+                if (formulario.edad.value<0) {
+                    alert("Edad erronea");
+                }           
+                if (formulario.CP.value.length != 5) {
+                alert("CP erroneo");
+                }
+            
+
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <h1>VALIDACIONES DE DATOS</h1>
+        <form name="formulario" onsubmit="return validarFormulario(this)">
+            <BR>Introduce tu nombre</BR>
+            <input type="text" name="nombre" size="100" id="">
+            <BR>Introduce tu edad</BR>
+            <input type="text" name="edad" size="3" id="">
+            <BR>Introduce tu CP</BR>
+            <input type="text" name="CP" size="5" id="">
+            <BR><input type="submit" value="Enviar Datos" name="enviar">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <title>DNI correcto</title>
+  <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+  <header>
+    <h1>JAVASCRIPT AVANZADO U3</h1>
+  </header>
+  <nav>
+    <a href="index.html">Volver a unidad 3</a>
+  </nav>
+  <main>
+    <h3>DNI correcto (2)</h3>
+    <p>Introduce un DNI correcto</p>
+    <form action="" id="formulario" onsubmit="return validacion()">
+      INTRODUCE DNI
+      <input type="text" id="campo" />
+      <input type="submit" value="Enviar" />
+    </form>
+    <div id="texto">
+
+
+    </div>
+   <img src="img/dni.PNG" alt="dni">
+  </main>
+  <footer>
+    <p>Todos los derechos reservados</p>
+    <p>JSS - 2024</p>
+  </footer>
+  <script type="text/javascript">
+    function validacion() {
+      valor = document.getElementById("campo").value;
+      var letrasDNI = "TRWAGMYFPDXBNJZSQVHLCKET";
+      if (valor.length != 9) {
+        alert("DNI longitud incorrecta");
+        return false;
+      }
+      primerCaracter = valor.charAt(0);
+      if (
+        primerCaracter == "Z" ||
+        primerCaracter == "Y" ||
+        primerCaracter == "X"
+      ) {
+        switch (primerCaracter) {
+          case "Z": valor = valor.replace("Z", "2"); break;
+          case "Y": valor = valor.replace("Y", "1"); break;
+          case "X": valor = valor.replace("X", "0"); break;
+        }
+      }
+      numerosDNI = valor.substring(0, 8);
+      restoDNI = numerosDNI % 23;
+      letraIndicada = valor.charAt(8).toUpperCase();
+      letraCorrecta = letrasDNI.substring(restoDNI, restoDNI + 1);
+      if (letraIndicada != letraCorrecta) {
+        alert("La letra no es correcta. DNI incorrecto")
+        return false;
+      } else {
+        alert("DNI correcto")
+      }
+    }
+  </script>
+
+
+
+
+</body>
+
+</html>

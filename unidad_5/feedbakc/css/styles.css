@@ -1,0 +1,255 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 90%;
+    margin: 5px auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+header {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    margin: 10px;
+}
+/* formato del panel de mando */
+.mando {
+    width: 50%;
+    height: auto;
+    margin: 30px auto;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.418);
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 25px gray;
+    line-height: 40px;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 80px;
+}
+
+/* formato del visor donde ira la playa y el avion */
+#visor {
+    margin-top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 400px;
+    height: 400px;
+    background-color: silver;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.45);
+}
+
+#playa {
+    position: relative;
+    width: 1444px;
+    height: 400px;
+}
+
+#avion {
+    position: absolute;
+    top: 30px;
+    left: 140px;
+    width: 60px;
+}
+/* animacion para la playa */
+@keyframes playa {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: -1044px;
+    }
+}
+
+@-webkit-keyframes playa {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -1044px;
+    }
+}
+
+@-moz-keyframes playa {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -1044px;
+    }
+}
+
+@-o-keyframes playa {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -1044px;
+    }
+}
+
+@-ms-keyframes playa {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -1044px;
+    }
+}
+
+#playa {
+    animation-name: playa;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -moz-animation-name: playa;
+    -moz-animation-duration: 5s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -webkit-animation-name: playa;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-duration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -o-animation-name: playa;
+    -o-animation-duration: 5s;
+    -o-animation-duration-count: infinite;
+    -o-animation-timing-function: linear;
+    -ms-animation-name: playa;
+    -ms-animation-duration: 5s;
+    -ms-animation-duration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+}
+
+/* animacion para el avion */
+/* el avion "sube y baja" y "se acerca y aleja" */
+@keyframes avion {
+    from {
+        top: 30px;
+        width: 60px;
+    }
+    50% {
+        top: 90px;
+        width: 50px;
+    }
+
+    to {
+        top: 30px;
+        width: 60px;
+    }
+}
+
+@-webkit-keyframes avion {
+    from {
+        top: 30px;
+        width: 60px;
+    }
+    50% {
+        top: 80px;
+        width: 50px;
+    }
+
+    to {
+        top: 30px;
+        width: 60px;
+    }
+}
+
+@-moz-keyframes avion {
+    from {
+        top: 30px;
+        width: 60px;
+    }
+    50% {
+        top: 80px;
+        width: 50px;
+    }
+
+    to {
+        top: 30px;
+        width: 60px;
+    }
+}
+
+@-o-keyframes avion {
+    from {
+        top: 30px;
+        width: 60px;
+    }
+    50% {
+        top: 80px;
+        width: 50px;
+    }
+
+    to {
+        top: 30px;
+        width: 60px;
+    }
+}
+
+@-ms-keyframes avion {
+    from {
+        top: 30px;
+        width: 60px;
+    }
+    50% {
+        top: 80px;
+        width: 50px;
+    }
+
+    to {
+        top: 30px;
+        width: 60px;
+    }
+}
+
+
+
+#avion {
+    animation-name: avion;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -ms-animation-name: avion;
+    -ms-animation-duration: 4s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -moz-animation-name: avion;
+    -moz-animation-duration: 4s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -webkit-animation-name: avion;
+    -webkit-animation-duration: 4ºs;
+    -webkit-animation-duration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -o-animation-name: avion;
+    -o-animation-duration: 4ºs;
+    -o-animation-duration-count: infinite;
+    -o-animation-timing-function: linear;
+}
+

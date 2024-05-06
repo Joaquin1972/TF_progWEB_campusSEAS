@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Texto y Textarea</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+    <header>
+        <h1>JAVASCRIPT AVANZADO U3</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 3</a>
+    </nav>
+    <main>
+        <h3>Obtener los valores de RadioButtons</h3>
+        <p>Selecciona un valor y pulsa enviar</p>
+        <form action="" id="formulario">
+            <label>¿Iras a la playa este verano?</label><br>
+            <input type="radio" value="si" name="pregunta" id="preg_si"> SI<br>
+            <input type="radio" value="no" name="pregunta" id="preg_no"> NO<br>
+            <input type="radio" value="nsnc" name="pregunta" id="preg_nsNc"> NSNC<br>
+            <input type="button" value="Enviar" onclick="respuesta()" class="boton">
+        </form>
+        <div id="texto">
+
+
+        </div>
+        <img src="img/radiob.PNG" alt="textotextarea">
+    </main>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function respuesta() {
+            document.getElementById("texto").innerHTML = "";
+            //obtengo todos los elementos con nombre pregunta, creo un array llamado elementos
+            var elementos = document.getElementsByName("pregunta");
+            //mediante un for, recorro dicho array y muestro por pantalla su valor y si está o no chequeado.
+            for (var i = 0; i < elementos.length; i++)
+                document.getElementById("texto").innerHTML += "Elemento: " + elementos[i].value + " - Seleccionado: " + elementos[i].checked + "<br>"
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

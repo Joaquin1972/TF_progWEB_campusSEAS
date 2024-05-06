@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'	'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <title>EJERCICIO 11</title>
+        <link rel='stylesheet' href='style.css' type='text/css' media='screen' charset='utf-8'/>
+        <script type="text/javascript">
+            imagenes = new Array("DSC_8011.jpg","DSC_8016.jpg","DSC_8017.jpg","DSC_8018.jpg","DSC_8019.jpg","DSC_8020.jpg","DSC_8021.jpg","DSC_8022.jpg","DSC_8023.jpg","DSC_8024.jpg")
+            var i=0;
+            var numeroImagenes = imagenes.length-1;
+            function posterior() {
+                if (i==numeroImagenes) {
+                    i = 0;
+                }
+                i++;
+                document.fotos.src = imagenes[i];
+            }
+
+            function anterior () {
+                if (i==0) {
+                    i = numeroImagenes;
+                }
+                i--;
+                document.fotos.src = imagenes[i];
+            }
+
+            
+            function aleatorio () {
+                i = Math.floor(Math.random()*10);    
+                document.fotos.src = imagenes[i];
+            }
+
+            function cambiaFoto(form) {
+                j = form.fotoelegida.selectedIndex;
+                document.fotos.src = imagenes[j-1];
+
+
+            } 
+        </script>
+    </head>
+    <body>
+        <img src="DSC_8011.jpg" name="fotos" width="40%"><br>
+        <a href="javascript:anterior()">anterior</a><br>
+        <a href="javascript:posterior()">siguiente</a><br>
+        <a href="javascript:aleatorio()">aleatorio</a><br><br>
+        <br>
+        <!--formulario con boton-->
+        <!-- <form name="formulario" method="post">
+              <p>
+                ELIJE FOTO 
+                <select size="1" name="fotoelegida">
+                    <option value="" selected="selected">Selecciona foto</option>
+                    <option value="foto1">foto1</option>
+                    <option value="foto2">foto2</option>
+                    <option value="foto3">foto3</option>
+                    <option value="foto4">foto4</option>
+                    <option value="foto5">foto5</option>
+                    <option value="foto6">foto6</option>
+                    <option value="foto7">foto7</option>
+                    <option value="foto8">foto8</option>
+                    <option value="foto9">foto9</option>
+                    <option value="foto10">foto10</option><br>
+                    <input type="button" name="seleccionaFoto" value="Ver foto" onclick="cambiaFoto(this.form)">
+                </select>
+              </p>
+        </form> -->
+            <!--formulario SIN boton--> 
+            <form name="formulario" method="post">
+                <p>
+                  ELIJE FOTO 
+                  <select size="1" name="fotoelegida" onchange="cambiaFoto(this.form)">
+                      <option value="" selected="selected">Selecciona foto</option>
+                      <option value="foto1">foto1</option>
+                      <option value="foto2">foto2</option>
+                      <option value="foto3">foto3</option>
+                      <option value="foto4">foto4</option>
+                      <option value="foto5">foto5</option>
+                      <option value="foto6">foto6</option>
+                      <option value="foto7">foto7</option>
+                      <option value="foto8">foto8</option>
+                      <option value="foto9">foto9</option>
+                      <option value="foto10">foto10</option><br>
+                  </select>
+                </p>
+          </form>
+    </body>
+</html>

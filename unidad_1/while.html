@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>WHILE</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Estructura de control de flujo WHILE</h3>
+    <p>Pulsa en los botones y te damos los 10 primeros cuadrados</p>
+    <input type="button" value="Cuadrado de 2" onclick="cuadrado(2)" class="boton">
+    <input type="button" value="Cuadrado de 3" onclick="cuadrado(3)" class="boton">
+    <input type="button" value="Cuadrado de 4" onclick="cuadrado(4)" class="boton">
+    <input type="button" value="Cuadrado de 5" onclick="cuadrado(5)" class="boton">
+    <input type="button" value="Cuadrado de 6" onclick="cuadrado(6)" class="boton">
+    <input type="button" value="Cuadrado de 7" onclick="cuadrado(7)" class="boton">
+    <input type="button" value="Cuadrado de 8" onclick="cuadrado(8)" class="boton">
+    <input type="button" value="Cuadrado de 9" onclick="cuadrado(9)" class="boton">
+
+    <div id="texto"></div>
+    <img src="img/while.PNG" alt="while">
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function cuadrado (n) {
+            document.getElementById("texto").innerHTML = ""
+            var i = 1;
+            var x = n;
+            while (i <= 10) {
+                cua = Math.pow(x,i);
+                if (i==10 ) {
+                    document.getElementById("texto").innerHTML += cua
+                } else{
+                document.getElementById("texto").innerHTML += cua + " - "}
+                i++
+            }}
+    </script>
+
+
+
+</body>
+
+</html>

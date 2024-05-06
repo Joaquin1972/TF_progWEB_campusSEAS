@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Animate</title>
+  <link rel='stylesheet' href='css/styles.css' type='text/css' media='screen' charset='utf-8' />
+
+  <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js" integrity="sha512-VjRpiWhUqdNa9bwBV7LnlG8CwsCVPenFyOQTSRTOGHw/tjtME96zthh0Vv9Itf3i8w4CkUrdYaS6+dAt1m1YXQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#btn_derecha").click(function() {
+        $(".caja").animate ({left: "50%", height: "200px", rotate:"360deg", borderRadius: "30px", backgroundColor: "red"}, "slow", function() {
+          $(".caja").fadeTo(2000, 0.4);
+      })
+      })
+      $("#btn_izquierda").click(function() {
+        $(".caja").animate ({left: "0%", height: "100px", rotate:"0deg", borderRadius: "0px", backgroundColor: "blue"} , "fast", function() {
+          $(".caja").fadeTo(1000, 1);
+        })
+      })
+ 
+
+      $("#btn_codigo").click(function () {
+        $("img").toggle("1000");
+      })
+    })    </script>  
+ 
+  <style>
+    .caja {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      border: 1px solid black;
+      position:  relative;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <header>
+    <h1>JQUERY U4</h1>
+  </header>
+  <nav>
+          <a href="../index.html">Inicio U5</a>
+  </nav>  
+
+  <div class="principal">
+    <h2>Animate con callback</h2>
+    <p>El cuadrado primero se deplaza y cambia de color. Despues de ello se atenúa</p>
+    <p>Se ha cargado la librería <b>jquery.color.min</b> para que funcione la animación del color.</p>
+    <input type="button" id="btn_derecha" value="Desplaza a la derecha despacioy luego atenua" class="boton_ul">
+    <input type="button" id="btn_izquierda" value="Desplaza a la izquierda rápido y quita atenuacion" class="boton_ul"><br>
+     <div class="caja">
+
+    </div><br>
+   
+
+
+    <input type="button" id="btn_codigo" value="Pulsa para mostrar/ocultar el código que lo realiza"></input><br>
+
+    <img src="img/animate2.PNG" alt="key" class="img_codigo">
+  </div>  <footer>
+    <p>Todos los derechos reservados</p>
+    <p>JSS - 2024</p>
+</footer>
+</body>
+
+</html>

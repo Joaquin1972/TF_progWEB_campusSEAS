@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Propiedades Avanzadas CSS3</title>
+    <script type="text/JavaScript">
+        window.onload = function () {
+            cuadro = document.getElementById("playa")
+            avion = document.getElementById("avion")
+        }
+
+        function parar() {
+            cuadro.style.animationPlayState = "paused";
+            avion.style.animationPlayState = "paused";
+        }
+
+        function seguir() {
+            avion.style.animationPlayState = "running";
+            cuadro.style.animationPlayState = "running";
+        }
+
+        function velocidad(num) {
+            valor = num + "s"; 
+            cuadro.style.animationDuration = valor;
+            cuadro.style.MozAnimationDuration = valor; 
+            cuadro.style.WebkitAnimationDuration = valor;
+}    </script>
+    <!-- <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' /> -->
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 90%;
+            margin: 5px auto;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 0, 255, 0.1);
+        }
+
+        header {
+            background-color: cornflowerblue;
+            color: white;
+            padding: 5px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+            margin: 10px;
+        }
+
+        #visor {
+            margin-top: 20px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 400px;
+            height: 400px;
+            background-color: silver;
+            overflow: hidden;
+            position: absolute;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.45);
+        }
+
+        #playa {
+            position: relative;
+            width: 1444px;
+            height: 400px;
+        }
+
+        #avion {
+            position: absolute;
+            top: 30px;
+            left: 140px;
+            width: 60px;
+        }
+
+        @keyframes playa {
+            from {
+                left: 0px;
+            }
+
+            to {
+                left: -1044px;
+            }
+
+
+        }
+
+        
+        @keyframes avion {
+            from {
+                top: 30px;
+                width: 60px;
+            }
+
+            50% {
+                top: 80px;
+                width: 50px;
+
+            }
+            to {
+                top: 30px;
+                width: 60px;
+
+            }
+        }
+        #playa {
+            animation-name: playa;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        #avion {
+            animation-name: avion;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        .mando {
+            width: 300px;
+            height: auto;
+            margin: 30px auto;
+            text-align: center;
+            background-color: rgba(128, 128, 128, 0.418);
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 25px gray;
+            line-height: 40px;
+        }
+
+        .boton:hover {
+            cursor: pointer;
+        }
+
+        .boton {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 80px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Animaciones con CSS3 y JavaScript de Avión Volando en la Playa</h1>
+        <h3>Ejercicio de feedback</h3>
+    </header>
+    <!-- <nav>
+        <a href="index.html">Volver</a>
+    </nav> -->
+    <section>
+        <article>
+            <div class="mando">
+                Arranca o para el avion:<br>
+                <input type="button" name="stop" value="stop" class="boton" onclick="parar()" />
+                <input type="button" name="play" value="play" class="boton" onclick="seguir()" />
+                <br>Elige la velocidad:<br>
+                <select name="vel" onchange="velocidad(this.value)">
+                    <option value="4" selected="selected">Normal</option>
+                    <option value="10">Muy lento</option>
+                    <option value="8">Lento</option>
+                    <option value="2">Rápido</option>
+                    <option value="1">Muy Rápido</option>
+                </select>
+            </div>
+            <div id="visor">
+                <img id="playa" src="img/playa3.jpg" alt="playa">
+                <img id="avion" src="img/avion.png" alt="avion">
+            </div>
+        </article>
+    </section>
+
+</body>
+
+</html>

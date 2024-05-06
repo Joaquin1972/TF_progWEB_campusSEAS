@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Fecha correcta</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+    <header>
+      <h1>JAVASCRIPT AVANZADO U3</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 3</a>
+    </nav>
+    <main>
+        <h3>Formato fecha correcto</h3>
+        <p>Indicad fecha correcta</p>
+        <form action="" id="formulario" onsubmit="return validacion()">
+            <center>
+                INTRODUCE FECHA (DD-MM-AAAA)<br>
+                DD   <input type="text" id="dia" /><br>
+                MM   <input type="text" id="mes" /><br>
+                AAAA <input type="text" id="anyo" /><br>
+                <input type="submit" value="Enviar" class="boton">
+            </center>
+        </form>
+        <div id="texto">
+
+
+        </div>
+        <img src="img/fecha1.PNG" alt="fecha">
+        <img src="img/fecha2.PNG" alt="fecha">
+        <img src="img/fecha3.PNG" alt="fecha">
+
+
+    </main>
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+      function validacion() {
+      // COMPROBAMOS SI AÑO TIENE MAS DE 4 DIGITOS O ESTÁ VACIO
+        var anyo = document.getElementById("anyo").value;
+        if (anyo.length > 4 || anyo == "") {
+          alert ("año incorrecto");
+          return false;
+        }
+        // SI ANYO ES DIVISBLE POR 4 Y NO TERMINA EN 00, ENTONCES EL AÑO ES BISIESTO, POR EJEMPLO 2024 ES BISIESTO, PERO 2000 NO
+        var bisiesto = anyo % 4;
+        if (bisiesto == 0) {
+          if (anyo.charAt(2) == "0" && anyo.charAt(3) == "0") {
+            var anyoBisiesto = false;
+          } else {
+            var anyoBisiesto = true;
+          }
+        }
+        //COMPRUEBO SI EL MES TIENE MENOS DE 2 DIGITOS, Y ESTA ENTRE 1 Y 12
+        var mes = document.getElementById("mes").value;
+        if (mes.length > 2 || mes < 0 || mes > 12) {
+          alert ("mes incorrecto");
+          return false;
+        }
+        //COMPRUEBO MES PARA HACER QUE EL MAXIMO DE DIAS DEL MES SEA, 31, 30 O 28/29
+        alert (mes)
+        if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
+          var dmax = 31;
+        }
+        if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+          var dmax = 30;
+        }
+        if (mes == 2 && !anyoBisiesto) {
+         var dmax = 28; 
+        }
+        if (mes == 2 && anyoBisiesto) {
+          var dmax = 29;
+      }
+      alert (dmax);
+      //COMPRUEBO SI EL DIA INTRODUCIDO ES CORRECTO
+        var dia = document.getElementById("dia").value;  
+        if (dia.length > 2 || dia < 0 || dia > dmax || dia == "") {
+          alert ("dia incorrecto")
+          return false;
+        }
+        // RESTO A MES 1, PARA AJUSTARME A JAVASCRIPTS, DONDE 0= ENERO Y 11 = DICIEMBRE
+        mes -= 1;
+        fecha = new Date(anyo,mes,dia);
+        alert (fecha);
+        document.getElementById("texto").innerHTML = "La fecha es correcta"
+    }
+    </script>
+
+
+
+
+</body>
+
+</html>

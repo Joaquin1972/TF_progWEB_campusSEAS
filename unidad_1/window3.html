@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Objeto Window</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+
+</head>
+
+<body>
+    <header>
+        <h1>LENGUAJE JAVASCRIPT U1</h1>
+    </header>
+    <nav>
+        <a href="index.html">Volver a unidad 1</a>
+    </nav>
+    <h3>Objeto Window</h3>
+    <p></p>
+    <center>
+    <p><b>HAZ CLIC EN UN EJEMPLO</b></p>
+    <input type="button" value="Ir a Heraldo" onclick="ColocarUrl('https://www.heraldo.es',0)" class="boton">
+    <input type="button" value="Ir a El Pais" onclick="ColocarUrl('https://www.elpais.com',1)" class="boton">
+    <input type="button" value="Ir a El Mundo" onclick="ColocarUrl('https://www.elmundo.es',2)" class="boton">
+    </center>
+        
+
+
+    
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>JSS - 2024</p>
+    </footer>
+    <script type="text/javascript">
+        function ColocarUrl(direccion,ifr) {
+            alert(direccion)
+            opener.document.getElementsByTagName("iframe")[ifr].src = direccion
+        }
+    </script>
+        
+        
+
+    
+    
+
+
+
+</body>
+
+</html>

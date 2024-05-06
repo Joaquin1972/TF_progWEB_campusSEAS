@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' lang='es'>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <title>Radio button</title>
+  <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+  <header>
+    <h1>JAVASCRIPT AVANZADO U3</h1>
+  </header>
+  <nav>
+    <a href="index.html">Volver a unidad 3</a>
+  </nav>
+  <main>
+    <h3>Radio button</h3>
+    
+    <form action="" id="formulario" onsubmit="return validacion()">
+      Elige un programa que quieras aprender:<br>
+      <input type="radio" id="html" name="fav_language" value="HTML">
+      <label for="html">HTML</label><br>
+      <input type="radio" id="css" name="fav_language" value="CSS">
+      <label for="css">CSS</label><br>
+      <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+      <label for="javascript">JavaScript</label><br>
+      <input type="radio" id="javascript" name="fav_language" value="Phyton">
+      <label for="javascript">Phyton</label><br>
+      <input type="submit" value="Enviar" class="boton"/>
+    </form>
+    <div id="texto">
+
+
+    </div>
+    <img src="img/rb.PNG" alt="rb">
+  </main>
+  <footer>
+    <p>Todos los derechos reservados</p>
+    <p>JSS - 2024</p>
+  </footer>
+  <script type="text/javascript">
+    function validacion() {
+      opciones = document.getElementsByName("fav_language");
+      var opcion_selecionada = false;
+      longitud = opciones.length;
+      //Recorro el array creado de opciones de radio button
+      for (i = 0; i < longitud; i++) {
+        //Compruebo si esta seleccionado algun radio, si es asi, 
+        //cambio la variable opcion_seleccionada a true
+        if (opciones[i].checked) {
+          opcion_selecionada = true
+          alert("Hay un elemento seleccionado, perfecto")
+          break;
+        }
+      }
+      if (!opcion_selecionada) {
+        alert("No hay ningun elemento seleccionado, ko")
+        return false;
+      }
+    }
+  </script>
+
+
+
+
+</body>
+
+</html>

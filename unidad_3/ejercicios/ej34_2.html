@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>EV4_UD3</title>
+    <script type="text/javascript">
+      //Funcion que se carga al cargar la página y que lanza
+      //funcion calcula cada 1s
+      window.onload = function () {
+        setInterval(calcula,1000)
+      }
+      function calcula() {
+        // obtengo hoy
+        var fechaActual = new Date();
+        // obtengo fecha que quiero seleccionar
+        var fechaSeleccionada = new Date(2025, 0, 20, 14, 0, 0, 0);
+        // paso ambas fechas a milisegundos
+        var horaActual = fechaActual.getTime();
+        var horaSeleccionada = fechaSeleccionada.getTime();
+        //obtengo difHoras en milisegundos
+        var dif = horaSeleccionada - horaActual;
+        //paso a segundos
+        var dif = dif/1000;
+        var dias = Math.floor(dif/86400);
+        var dif = dif - dias*86400
+        var horas = Math.floor(dif/3600);
+        var dif = dif - horas*3600;
+        var minutos = Math.floor(dif/60);
+        var dif = dif - minutos*60;
+        var segundos = Math.floor(dif);
+       
+
+        document.getElementById("contador").innerHTML 
+        = "Dias: " + dias + 
+        "<br> horas: " + horas
+        +"<br> minutos: " + minutos
+        +"<br> segundos: " + segundos;
+      }
+    </script>
+  </head>
+    <!--<body onload="calcula('contador')">-->
+   <body>
+    <a href="../index.html">Volver</a>
+    <div id="contador"></div>
+  </body>
+</html>

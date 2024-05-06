@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Evento jQUERY</title>
+  <script type="text/javascript" src="js/jquery-3.7.1.min.js">
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#boton2").click(function () {
+        $("#parrafo").text("He cambiado el texto")
+      })
+      $("#boton1").click(function () {
+        alert($("#parrafo").text());
+      })
+      $("#boton3").click(function () {
+        $("td").text("Nuevo valor")
+      })
+
+
+
+
+
+      $("#btn_codigo").click(function () {
+        $("img").toggle("1000");
+      })
+    });  
+  </script>
+
+
+  <link rel='stylesheet' href='css/styles.css' type='text/css' media='screen' charset='utf-8' />
+</head>
+
+<body>
+  <header>
+    <h1>JQUERY U4</h1>
+  </header>
+  <nav>
+          <a href="../index.html">Inicio U5</a>
+  </nav>  
+  <div class="principal">
+    <h2>Método text</h2>
+    <p>Pulsa en los botones para establecer u obtener el valor de un texto</p>
+    <input type="button" value="Obtener valor de un texto" class="boton_ul" id="boton1">
+    <input type="button" value="Esteblecer valor a un texto" class="boton_ul" id="boton2">
+    <input type="button" value="Obtener valor de un elemento td" class="boton_ul" id="boton3"><br><br>
+    <div id="parrafo">
+      Este es el valor del parrafo inicial
+    </div>
+    <table>
+      <tr>
+        <td>Celda 1.1</td>
+        <td>Celda 1.2</td>
+      </tr>
+    </table>
+    <input type="button" id="btn_codigo" value="Pulsa para mostrar/ocultar el código que lo realiza"></input><br>
+    <img src="img/text.png" alt="html" class="img_codigo">
+
+  </div>
+  <footer>
+    <p>Todos los derechos reservados</p>
+    <p>JSS - 2024</p>
+</footer>
+</body>
+
+</html>
